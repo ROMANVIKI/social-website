@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-%8^h(fz9%mm@3c1gzjxh-0b4ymgxhv+w3o=06(m%chrn_so&=s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -38,6 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
+    'django_extensions',
+    'images.apps.ImagesConfig',
+
+ # new
 ]
 
 MIDDLEWARE = [
@@ -158,4 +163,17 @@ MEDIA_ROOT = BASE_DIR / 'media'
 AUTHENTICATION_BACKENDS = [
 'django.contrib.auth.backends.ModelBackend',
 'account.authentication.EmailAuthBackend',
+
+'social_core.backends.google.GoogleOAuth2',
+
+
 ]
+
+
+
+
+
+
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '329724508621-4k1ddipbt4cpas17vl8t6kkmr5hmffv6.apps.googleusercontent.com' # Google Client ID
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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' # Google Client Secret

@@ -15,6 +15,11 @@
       If you don't have an account <a href="{% url "register" %}">register here</a>.
     </p>
   {% endif %}
+  <li class="google">
+    <a href="{% url "social:begin" "google-oauth2" %}">
+    Sign in with Google
+    </a>
+    </li>
   <div class="login-form">
     <form action="{% url 'login' %}" method="post">
       {{ form.as_p }}
